@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on my own projects and Capgemini<br>👯 I’m looking to collaborate with other devs<br>🤝 I’m looking for help with OpenSource<br>🌱 I’m currently learning AMS, Quarkus,etc<br>💬 Ask me about all<br>⚡ I'm looking for team working
+🔭 I’m currently working on my own projects <br>👯 I’m looking to collaborate with other devs<br>🤝 I’m looking for help with OpenSource<br>🌱 I’m currently learning AMS, Quarkus,etc<br>💬 Ask me about all<br>⚡ I'm looking for team working
 
 
 ## 🌐 Socials:
