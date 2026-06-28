@@ -1,173 +1,171 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
   <defs>
-    <!-- Fonts -->
+    <!-- Styles & Fonts -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
       
-      .title {
-        font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-weight: 900;
-        font-size: 44px;
-        fill: url(#title-grad);
-        letter-spacing: 2px;
-        filter: drop-shadow(0px 4px 12px rgba(138, 43, 226, 0.3));
+      .term-text {
+        font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, monospace;
+        font-size: 13px;
+        fill: #c9d1d9;
+        font-weight: 400;
       }
       
-      .subtitle {
-        font-family: 'JetBrains Mono', monospace;
-        font-weight: 500;
-        font-size: 17px;
-        fill: #94a3b8;
-        letter-spacing: 0.5px;
-      }
-      
-      .accent {
-        fill: #38bdf8;
+      .prompt-user {
+        fill: #58a6ff;
         font-weight: 700;
       }
       
-      .terminal-text {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 13px;
-        fill: #64748b;
+      .prompt-host {
+        fill: #8b949e;
       }
       
-      .terminal-cmd {
-        fill: #f43f5e;
-        font-weight: 500;
+      .prompt-dir {
+        fill: #bc8cff;
+      }
+      
+      .prompt-cmd {
+        fill: #ff7b72;
+      }
+      
+      .json-key {
+        fill: #79c0ff; /* Cyan-blue keys */
+      }
+      
+      .json-string {
+        fill: #a5d6ff; /* Soft green-blue strings */
+      }
+      
+      .json-array {
+        fill: #ff7b72; /* Orange brackets */
+      }
+      
+      .json-braces {
+        fill: #ff7b72;
       }
       
       .cursor {
-        fill: #38bdf8;
-        animation: blink 1.2s infinite;
+        fill: #58a6ff;
+        animation: blink 1s infinite;
       }
       
-      /* Animations */
+      .graph-line {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* Blinking cursor animation */
       @keyframes blink {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
       
-      @keyframes pulse {
-        0%, 100% { transform: scale(1); opacity: 0.4; }
-        50% { transform: scale(1.05); opacity: 0.8; }
+      /* Subtle hover effect on nodes */
+      .graph-node {
+        transition: transform 0.2s ease, r 0.2s ease;
+        cursor: pointer;
       }
-      
-      @keyframes flow {
-        to {
-          stroke-dashoffset: -60;
-        }
-      }
-      
-      .pulse-bg {
-        animation: pulse 4s ease-in-out infinite;
-      }
-      
-      .signal-line {
-        stroke-dasharray: 8, 22;
-        animation: flow 2s linear infinite;
-      }
-      
-      .signal-line-fast {
-        stroke-dasharray: 6, 14;
-        animation: flow 1.2s linear infinite;
-      }
-      
-      .node {
-        transition: all 0.3s ease;
-      }
-      
-      .node:hover {
-        fill: #00f2fe;
+      .graph-node:hover {
+        transform: scale(1.3);
         r: 6px;
       }
     </style>
-
-    <!-- Gradients -->
-    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#05070f" />
-      <stop offset="50%" stop-color="#0c1122" />
-      <stop offset="100%" stop-color="#070a14" />
-    </linearGradient>
-    
-    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" />    <!-- Cyan -->
-      <stop offset="50%" stop-color="#818cf8" />   <!-- Indigo -->
-      <stop offset="100%" stop-color="#c084fc" />  <!-- Purple -->
-    </linearGradient>
-    
-    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.1" />
-    </linearGradient>
-
-    <!-- Grid Pattern -->
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.6" />
-    </pattern>
   </defs>
 
-  <!-- Background Base -->
-  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="10" />
+  <!-- Background Base (Matches GitHub Dark Theme) -->
+  <rect width="100%" height="100%" fill="#0d1117" />
+
+  <!-- Terminal Window Mockup -->
+  <rect x="20" y="15" width="760" height="210" rx="8" ry="8" fill="#161b22" stroke="#30363d" stroke-width="1.5" />
   
-  <!-- Grid Overlay -->
-  <rect width="100%" height="100%" fill="url(#grid)" rx="10" />
-
-  <!-- Background Glowing Orbs -->
-  <circle cx="100" cy="50" r="120" fill="#38bdf8" opacity="0.04" filter="blur(60px)" class="pulse-bg" />
-  <circle cx="700" cy="150" r="100" fill="#c084fc" opacity="0.04" filter="blur(50px)" class="pulse-bg" />
-
-  <!-- Abstract Tech Circuits / Lines (Left-Center background) -->
-  <path d="M -10 170 L 250 170 L 290 210" fill="none" stroke="url(#line-grad)" stroke-width="1.5" />
-  <path d="M 120 -10 L 120 40 L 160 80" fill="none" stroke="url(#line-grad)" stroke-width="1" />
-  <path d="M 400 -10 L 450 40 L 520 40" fill="none" stroke="url(#line-grad)" stroke-width="1.5" />
-
-  <!-- Animated Signal Lines (Background Elements) -->
-  <path d="M -10 170 L 250 170 L 290 210" fill="none" stroke="#38bdf8" stroke-width="1.5" class="signal-line" opacity="0.5" />
-  <path d="M 400 -10 L 450 40 L 520 40" fill="none" stroke="#c084fc" stroke-width="1.5" class="signal-line-fast" opacity="0.4" />
-
-  <!-- Circuit Network (Right Side Decoration) -->
-  <g id="circuit" opacity="0.85">
-    <!-- Connecting Lines -->
-    <line x1="580" y1="110" x2="630" y2="60" stroke="#1e293b" stroke-width="1.5" />
-    <line x1="630" y1="60" x2="700" y2="60" stroke="#1e293b" stroke-width="1.5" />
-    <line x1="630" y1="60" x2="610" y2="150" stroke="#1e293b" stroke-width="1.5" />
-    <line x1="700" y1="60" x2="740" y2="110" stroke="#1e293b" stroke-width="1.5" />
-    <line x1="700" y1="60" x2="680" y2="170" stroke="#1e293b" stroke-width="1.5" />
-    <line x1="610" y1="150" x2="680" y2="170" stroke="#1e293b" stroke-width="1.5" />
-    <line x1="680" y1="170" x2="740" y2="110" stroke="#1e293b" stroke-width="1.5" />
-    <line x1="580" y1="110" x2="610" y2="150" stroke="#1e293b" stroke-width="1.5" />
+  <!-- Window Header / Title Bar -->
+  <g id="window-controls">
+    <!-- Red, Yellow, Green Window Dots -->
+    <circle cx="45" cy="33" r="5" fill="#ff5f56" />
+    <circle cx="60" cy="33" r="5" fill="#ffbd2e" />
+    <circle cx="75" cy="33" r="5" fill="#27c93f" />
     
-    <!-- Flowing Pulses along Circuit Lines -->
-    <path d="M 580 110 L 630 60 L 700 60 L 740 110" fill="none" stroke="#38bdf8" stroke-width="1.8" class="signal-line" />
-    <path d="M 580 110 L 610 150 L 680 170 L 740 110" fill="none" stroke="#c084fc" stroke-width="1.8" class="signal-line-fast" />
-    <path d="M 630 60 L 610 150" fill="none" stroke="#818cf8" stroke-width="1.5" class="signal-line" />
-    <path d="M 700 60 L 680 170" fill="none" stroke="#818cf8" stroke-width="1.5" class="signal-line-fast" />
+    <!-- Title Text -->
+    <text x="400" y="38" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#8b949e">bash — sergio@github: ~/profile (v1.2.0)</text>
+  </g>
+  
+  <!-- Window Divider Line -->
+  <line x1="20" y1="50" x2="780" y2="50" stroke="#30363d" stroke-width="1" />
 
-    <!-- Nodes (Dots) -->
-    <circle cx="580" cy="110" r="4.5" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5" class="node" />
-    <circle cx="630" cy="60" r="4.5" fill="#818cf8" stroke="#0f172a" stroke-width="1.5" class="node" />
-    <circle cx="700" cy="60" r="4.5" fill="#38bdf8" stroke="#0f172a" stroke-width="1.5" class="node" />
-    <circle cx="740" cy="110" r="5" fill="#c084fc" stroke="#0f172a" stroke-width="1.5" class="node" />
-    <circle cx="610" cy="150" r="4" fill="#c084fc" stroke="#0f172a" stroke-width="1.5" class="node" />
-    <circle cx="680" cy="170" r="4.5" fill="#818cf8" stroke="#0f172a" stroke-width="1.5" class="node" />
+  <!-- Git Graph (Left Panel Decoration - The Geeky Touch) -->
+  <g id="git-graph" transform="translate(15, 0)">
+    <!-- Branch Paths -->
+    <!-- main branch line (green) -->
+    <line x1="60" y1="65" x2="60" y2="210" stroke="#3fb950" stroke-width="2.5" class="graph-line" />
+    
+    <!-- feature/iot branch line (orange) -->
+    <path d="M 60,75 C 80,85 90,95 90,110 C 90,125 80,135 60,145" stroke="#db6d28" stroke-width="2" fill="none" class="graph-line" />
+    
+    <!-- feature/cloud branch line (purple) -->
+    <path d="M 60,125 C 90,135 115,145 115,160 C 115,175 90,185 60,195" stroke="#bc8cff" stroke-width="2" fill="none" class="graph-line" />
+
+    <!-- Commits (Nodes) -->
+    <!-- main commits -->
+    <circle cx="60" cy="65" r="4.5" fill="#3fb950" stroke="#161b22" stroke-width="1.5" class="graph-node" />
+    <circle cx="60" cy="125" r="4.5" fill="#3fb950" stroke="#161b22" stroke-width="1.5" class="graph-node" />
+    <circle cx="60" cy="210" r="4.5" fill="#3fb950" stroke="#161b22" stroke-width="1.5" class="graph-node" />
+    
+    <!-- feature commits -->
+    <circle cx="90" cy="110" r="4" fill="#db6d28" stroke="#161b22" stroke-width="1.5" class="graph-node" />
+    <circle cx="115" cy="160" r="4" fill="#bc8cff" stroke="#161b22" stroke-width="1.5" class="graph-node" />
+    
+    <!-- Graph Text labels -->
+    <text x="75" y="69" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8b949e" opacity="0.5">main</text>
+    <text x="102" y="114" font-family="'JetBrains Mono', monospace" font-size="9" fill="#db6d28" opacity="0.6">feat/iot</text>
+    <text x="127" y="164" font-family="'JetBrains Mono', monospace" font-size="9" fill="#bc8cff" opacity="0.6">feat/cloud</text>
   </g>
 
-  <!-- Typography / Info Panel -->
-  <g transform="translate(60, 0)">
-    <!-- Header Greeting -->
-    <text x="0" y="55" class="subtitle" font-size="14" fill="#818cf8" letter-spacing="2px">👋 HELLO WORLD, I'M</text>
+  <!-- Code/Terminal Workspace (Right Panel) -->
+  <g transform="translate(180, 0)">
+    <!-- Line 1: Command Prompt -->
+    <text x="0" y="75" class="term-text">
+      <tspan class="prompt-user">sergio</tspan><tspan class="prompt-host">@github</tspan>:<tspan class="prompt-dir">~/profile</tspan>$ <tspan class="prompt-cmd">cat</tspan> developer.json
+    </text>
     
-    <!-- Title / Name -->
-    <text x="0" y="105" class="title">Sergio Muiños</text>
+    <!-- Line 2: JSON Braces Start -->
+    <text x="0" y="92" class="term-text">
+      <tspan class="json-braces">{</tspan>
+    </text>
     
-    <!-- Subtitle / Role -->
-    <text x="0" y="145" class="subtitle">Full-Stack Engineer <tspan class="accent">&amp;</tspan> IoT Maker</text>
+    <!-- Line 3: Name -->
+    <text x="20" y="109" class="term-text">
+      <tspan class="json-key">"name"</tspan>: <tspan class="json-string">"Sergio Muiños"</tspan>,
+    </text>
     
-    <!-- Terminal Command Mockup -->
-    <text x="0" y="180" class="terminal-text">
-      <tspan fill="#475569">sergio@github:~$</tspan> <tspan class="terminal-cmd">cat</tspan> developer.json | jq <tspan fill="#10b981">".skills[]"</tspan>
-      <tspan class="cursor" font-weight="900">_</tspan>
+    <!-- Line 4: Role -->
+    <text x="20" y="126" class="term-text">
+      <tspan class="json-key">"role"</tspan>: <tspan class="json-string">"Full-Stack Engineer &amp; IoT Maker"</tspan>,
+    </text>
+    
+    <!-- Line 5: Stacks -->
+    <text x="20" y="143" class="term-text">
+      <tspan class="json-key">"stack"</tspan>: <tspan class="json-array">[</tspan><tspan class="json-string">"Java/Spring"</tspan>, <tspan class="json-string">"C#/.NET"</tspan>, <tspan class="json-string">"TS/Angular"</tspan>, <tspan class="json-string">"Docker"</tspan>, <tspan class="json-string">"IoT"</tspan><tspan class="json-array">]</tspan>,
+    </text>
+    
+    <!-- Line 6: Focus -->
+    <text x="20" y="160" class="term-text">
+      <tspan class="json-key">"focus"</tspan>: <tspan class="json-string">"Cloud Architectures &amp; Quarkus Ecosystem"</tspan>,
+    </text>
+    
+    <!-- Line 7: Location -->
+    <text x="20" y="177" class="term-text">
+      <tspan class="json-key">"status"</tspan>: <tspan class="json-string">"Building scalable &amp; optimized solutions"</tspan>
+    </text>
+    
+    <!-- Line 8: JSON Braces End -->
+    <text x="0" y="194" class="term-text">
+      <tspan class="json-braces">}</tspan>
+    </text>
+    
+    <!-- Line 9: Interactive prompt with blinking cursor -->
+    <text x="0" y="211" class="term-text">
+      <tspan class="prompt-user">sergio</tspan><tspan class="prompt-host">@github</tspan>:<tspan class="prompt-dir">~/profile</tspan>$ <tspan class="cursor">_</tspan>
     </text>
   </g>
 </svg>
