@@ -44,29 +44,8 @@
 
 ### 🚀 Featured Projects / Proyectos Destacados
 
-<table width="100%" border="0" cellpadding="10">
-  <tr>
-    <td width="50%" valign="top">
-      <h4>💊 <a href="https://github.com/SergioMuinhos/MedPils">MedPils</a></h4>
-      <p>Aplicación de gestión y control de medicamentos, facilitando la adherencia diaria a tratamientos médicos de forma intuitiva.</p>
-      <p>
-        <img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white" alt="Android" />
-        <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java" />
-        <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase" />
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <h4>🌬️ <a href="https://github.com/SergioMuinhos/WindmillWeather">WindmillWeather</a></h4>
-      <p>Visualizador interactivo y estación del tiempo enfocados en el monitoreo de velocidad de viento y clima local usando IoT y Web.</p>
-      <p>
-        <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-        <img src="https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white" alt="Angular" />
-        <img src="https://img.shields.io/badge/Arduino-00979D?style=flat-square&logo=arduino&logoColor=white" alt="Arduino" />
-        <img src="https://img.shields.io/badge/Raspberry_Pi-A22846?style=flat-square&logo=raspberry-pi&logoColor=white" alt="Raspberry Pi" />
-      </p>
-    </td>
-  </tr>
-</table>
+- 💊 **[MedPils](https://github.com/SergioMuinhos/MedPils)** — Aplicación de gestión y control de medicamentos, diseñada para facilitar el seguimiento diario de tratamientos médicos de forma intuitiva.
+- 🌬️ **[WindmillWeather](https://github.com/SergioMuinhos/WindmillWeather)** — Visualizador interactivo y estación meteorológica para el monitoreo en tiempo real del viento y clima local.
 
 <hr />
 
