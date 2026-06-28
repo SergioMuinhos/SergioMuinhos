@@ -155,8 +155,8 @@
 <br/>
 
 <div align="center">
-  <h3>🏆 GitHub Trophies</h3>
-  <img src="https://github-profile-trophy.vercel.app/?username=SergioMuinhos&theme=tokyonight&no-bg=false&margin-w=4" alt="GitHub Trophies" />
+  <h3>📈 GitHub Activity Graph</h3>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=SergioMuinhos&theme=tokyonight&bg_color=161b22&hide_border=true" alt="Sergio's GitHub Activity Graph" />
 </div>
 
 <hr />
