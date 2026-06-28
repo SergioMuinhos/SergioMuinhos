@@ -167,7 +167,5 @@
   
   <br/><br/>
   
-  <a href="https://visitcount.itsvg.in">
-    <img src="https://visitcount.itsvg.in/api?id=SergioMuinhos&icon=1&color=12" alt="Visit Count" />
-  </a>
+  <img src="https://komarev.com/ghpvc/?username=SergioMuinhos&color=blueviolet&style=flat-square" alt="Visitor Count" />
 </div>
